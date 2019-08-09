@@ -1,0 +1,21 @@
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Description</th> 
+        <th>Deadline</th>
+        <th>workerId</th>
+        <th>Delete</th>
+    </tr>
+        <% @orders.sort.each do |order|%>
+                <tr >
+                    <td><%= order.title %></td>
+                    <td><%= order.description%> </td> 
+                    <td><%= order.deadline%> </td>
+                    <td><%= order.workerId%> </td>
+                    <%# <td><%= link_to "DELTE", worker_path(worker), :method => :delete, data: {confirm: "Are you sure?"}%></td> %>
+                </tr>
+        <% end if @orders %>
+</table>
+
+<br><br>
+<%= link_to "Add Order", "/orders/new" %>

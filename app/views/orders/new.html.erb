@@ -1,0 +1,13 @@
+ <h1>Work Order Form</h1>
+
+ <%= form_for @order do |f|%>
+    <%= f.text_field :title, id:"inputTitle", placeholder: "Work Order Title" %>
+
+    <%= f.text_field :description, id:"inputDescription", placeholder: "Work Order Descriptio" %>
+
+    <%= f.date_field :deadline, as: :date, value: f.object.try(:strftime,"%m/%d/%Y")%>
+    
+    <%= f.select :workerId, options_for_select(@workers.collect{|worker| [worker.name, worker.id]}), {:multiple => :multiple, :size => 5}%>
+
+    <%= f.submit "Add Work Order"%>
+<% end %>

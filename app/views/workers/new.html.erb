@@ -1,0 +1,11 @@
+<h1>Worker Form</h1>
+
+ <%= form_for @worker do |f|%>
+    <%= f.text_field :name, id:"inputName", placeholder: "Worker Name" %>
+
+    <%= f.text_field :company_name, id:"inputCompanyName", placeholder: "Company Name" %>
+
+    <%= f.email_field :email, id:"inputEmail", placeholder: "Email" %>
+
+    <%= f.submit "Add Worker"%>
+<% end %>
