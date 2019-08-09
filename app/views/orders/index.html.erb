@@ -1,21 +1,26 @@
-<table border="1">
-    <tr>
-        <th>Title</th>
-        <th>Description</th> 
-        <th>Deadline</th>
-        <th>workerId</th>
-        <th>Delete</th>
-    </tr>
-        <% @orders.sort.each do |order|%>
-                <tr >
-                    <td><%= order.title %></td>
-                    <td><%= order.description%> </td> 
-                    <td><%= order.deadline%> </td>
-                    <td><%= order.workerId%> </td>
-                    <%# <td><%= link_to "DELTE", worker_path(worker), :method => :delete, data: {confirm: "Are you sure?"}%></td> %>
-                </tr>
-        <% end if @orders %>
-</table>
+<div class="container">
+    <h1 class="text-center">Work Order List: </h1>
+    <table border="1" class="container">
+        <tr>
+            <th>Title</th>
+            <th>Description</th> 
+            <th>Deadline</th>
+            <th>workerId</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+            <% @orders.sort.each do |order|%>
+                    <tr >
+                        <td><%= order.title %></td>
+                        <td><%= order.description%> </td> 
+                        <td><%= order.deadline%> </td>
+                        <td><%= order.workerId%> </td>
+                        <td><%= link_to "EDIT", edit_order_url(order.id), class: "text-warning" %></td>
+                        <td><%= link_to "DELTE", order_path(order), :method => :delete, data: {confirm: "Are you sure?"}, class: "text-danger"%></td>
+                    </tr>
+            <% end if @orders %>
+    </table>
 
-<br><br>
-<%= link_to "Add Order", "/orders/new" %>
+    <br><br>
+    <%= link_to "Add Order", "/orders/new", class: "btn btn-lage btn-primary" %>
+</div>

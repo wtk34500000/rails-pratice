@@ -10,6 +10,23 @@ class OrdersController < ApplicationController
     end
 
     def show
+        @order=Order.find(params[:id])
+    end
+
+    def update
+        puts params
+        @order=Order.find(params[:id])
+        if @order.update(order_params)
+            redirect_to "/orders"
+        else 
+            render :edit
+        end
+    end
+
+    def edit
+        @order=Order.find(params[:id])
+        @workers=Worker.all
+
     end
 
     def create
@@ -19,6 +36,12 @@ class OrdersController < ApplicationController
         else 
             render :new
         end
+    end
+
+    def destroy
+        order=Order.find(params[:id])
+        order.destroy
+        redirect_to "/orders"
     end
 
     private
