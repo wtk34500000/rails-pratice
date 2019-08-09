@@ -3,19 +3,19 @@
 
     <%= form_for @order do |f|%>
         <div class="form-group row">
-            <%= f.text_field :title, id:"inputTitle", placeholder: "Work Order Title", class: "form-control" %>
+            <%= f.text_field :title, id:"inputTitle", placeholder: "Work Order Title", :required => true, class: "form-control" %>
         </div>
         <div class="form-group row">
-            <%= f.text_field :description, id:"inputDescription", placeholder: "Work Order Descriptio", class: "form-control" %>
+            <%= f.text_area :description, id:"inputDescription", placeholder: "Work Order Descriptio", :required => true, class: "form-control" %>
         </div>
         <div class="form-group row">
-            <%= f.date_field :deadline, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: "form-control"%>
+            <%= f.date_field :deadline, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), :required => true, class: "form-control"%>
         </div>
         <div class="form-group row">
             <%= f.select :workerId, options_for_select(@workers.collect{|worker| [worker.name, worker.id]}), {:multiple => :multiple, :size => 5}, class: "form-control"%>
         </div>
         <div class="form-group row">
-            <%= f.submit "Add Work Order", class: "btn btn-large btn-primary" %>
+            <%= f.submit "Add Work Order", class: "btn btn-large btn-primary form-control" %>
         </div>
     <% end %>
 </div>

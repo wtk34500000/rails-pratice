@@ -1,11 +1,18 @@
-<h1>Worker Form</h1>
+<div class="container">
+    <h1 class="text-center">Worker Form</h1>
 
- <%= form_for @worker do |f|%>
-    <%= f.text_field :name, id:"inputName", placeholder: "Worker Name" %>
-
-    <%= f.text_field :company_name, id:"inputCompanyName", placeholder: "Company Name" %>
-
-    <%= f.email_field :email, id:"inputEmail", placeholder: "Email" %>
-
-    <%= f.submit "Add Worker"%>
-<% end %>
+    <%= form_for @worker do |f|%>
+        <div class="form-group">
+            <%= f.text_field :name, id:"inputName", placeholder: "Worker Name", :required => true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.text_field :company_name, id:"inputCompanyName", placeholder: "Company Name", :required => true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.email_field :email, id:"inputEmail", placeholder: "Email", :required => true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= f.submit "Add Worker" , class: " btn btn-large btn-primary form-control"%>
+        </div>
+    <% end %>
+</div>
