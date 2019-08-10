@@ -11,10 +11,10 @@
         </tr>
             <% @orders.sort.each do |order|%>
                     <tr >
-                        <td><%= order.title %></td>
+                        <td><%= link_to order.title, order_path(order.id) %></td>
                         <td><%= order.description%> </td> 
                         <td><%= order.deadline%> </td>
-                        <td><%= order.workerId%> </td>
+                        <td><%= link_to order.workerId, worker_path(order.workerId), class: "text-primary" %> </td>
                         <td><%= link_to "EDIT", edit_order_url(order.id), class: "text-warning" %></td>
                         <td><%= link_to "DELTE", order_path(order), :method => :delete, data: {confirm: "Are you sure?"}, class: "text-danger"%></td>
                     </tr>
@@ -22,5 +22,7 @@
     </table>
 
     <br><br>
-    <%= link_to "Add Order", "/orders/new", class: "btn btn-lage btn-primary" %>
+    <%= link_to "Add Work Order", "/orders/new", class: "btn btn-lage btn-primary" %>
+        <%= link_to "Add Worker", "/workers/new", class: "btn btn-lage btn-danger" %>
+
 </div>

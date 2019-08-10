@@ -1,4 +1,10 @@
-<h1><%= @order.title %></h1>
-<p><%= @order.description%></p>
-<p><%= @order.deadline%></p>
-<p><%=  @order.workerId ? @order.workerId : "Not assigned" %></p>
+<div class ="container text-center">
+    <h3>Order Details: </h3>
+    <h1>Title: <%= @order.title %></h1>
+    <p> description: <%= @order.description%></p>
+    <p>Deadline: <%= @order.deadline%></p>
+    <p>workerId: <%= @order.workerId ? @order.workerId : "Not assigned" %></p>
+    <% @order.workers.each do |worker|%> 
+        <p><%= worker.name%></p>
+    <% end %>
+</div>
