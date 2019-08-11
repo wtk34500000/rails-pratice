@@ -17,3 +17,13 @@ Work orders application is a powerful, easy-to-use cloud-based computerized mana
 
 - Add a work order to begin if work order list is empty!
 - Use "/orders/v1/api" as the end point for api request
+
+## Features
+
+- Create a worker
+- Delete a worker
+- Create a work order
+- Assigning a worker to an order
+- Fetch all work orders:
+  ⋅⋅⋅ For a specific worker
+  ⋅⋅⋅ Sorted by deadline
