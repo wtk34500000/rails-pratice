@@ -1,9 +1,24 @@
 <div class ="container text-center">
-    <h3>Order Details: </h3>
-    <h1>Title: <%= @order.title %></h1>
-    <p> description: <%= @order.description%></p>
-    <p>Deadline: <%= @order.deadline%></p>
-    <% @order.workers.each do |worker| %>
-          <p>-<%= worker.name %></p>
-     <% end %>
+    <h1 class="text-center">Work Order Detail: </h1>
+    <table border="5" class="container">
+        <tr>
+            <th>Title</th>
+            <th>Description</th> 
+            <th>Deadline</th>
+             <th>Assigned Workers</th>
+        </tr>       
+        <tr >
+            <td><%= @order.title %></td>
+            <td><%= @order.description%> </td> 
+            <td><%= @order.deadline%> </td>
+            <td class="text-primary">
+            <% @order.workers.each do |worker| %>
+                     <%= link_to worker.name, worker_path(worker.id) %>
+            <% end if @order.workers%>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <%= link_to "Go Back ", "/orders", class: "btn btn-lage btn-danger" %>
 </div>
+

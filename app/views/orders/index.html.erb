@@ -4,17 +4,15 @@
         <tr>
             <th>Title</th>
             <th>Description</th> 
-            <th>Deadline</th>
+            <th>Deadline(sorted)</th>
             <th>Edit</th>
-            <th>Delete</th>
         </tr>
-            <% @orders.sort.each do |order|%>
+            <% @orders.sort_by{|s| Date.parse s.deadline }.each do |order|%>
                     <tr >
                         <td><%= link_to order.title, order_path(order.id) %></td>
                         <td><%= order.description%> </td> 
                         <td><%= order.deadline%> </td>
                         <td><%= link_to "EDIT", edit_order_url(order.id), class: "text-warning" %></td>
-                        <td><%= link_to "DELTE", order_path(order), :method => :delete, data: {confirm: "Are you sure?"}, class: "text-danger"%></td>
                     </tr>
             <% end if @orders %>
     </table>

@@ -2,7 +2,6 @@ class WorkersController < ApplicationController
 
     def index
         @workers=Worker.all
-        # render :json => @workers
     end
 
     def new 
@@ -17,18 +16,19 @@ class WorkersController < ApplicationController
             if @worker.save
                 redirect_to "/workers"
             else
+                @worker=Worker.new
+                @orders=Order.all
                 render :new
             end
-
         else
+            @worker=Worker.new
+            @orders=Order.all
             render :new
         end
-
     end
 
     def show
         @worker=Worker.find(params[:id])
-        render :json => @worker
     end
 
     def destroy

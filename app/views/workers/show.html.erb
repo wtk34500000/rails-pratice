@@ -1,15 +1,21 @@
-<div class="container">
-        <h1>Name: <%= @worker.name%></h1>
-        <p>Company Name: <%= @worker.company_name%></p>
-        <p>Email: <%= @worker.email%></p>
-        <div>
-            Assigned Worker Order: 
-            <ul>
-                <li>Work Order Title: <%= @worker.order.title%></li>
-                <li>Work Order Description: <%= @worker.order.description%></li>
-                <li>Work Order Deadline:<%= @worker.order.deadline%></li>
-            </ul>
-        </div>
-        
+<div class="container text-center">
+        <h1 class="text-center">Worker Details: </h1>
+        <table border="5" class="container">
+            <tr>
+                <th>Name</th>
+                <th>Company Name</th> 
+                <th>Email</th>
+                <th>Assigned Work Order Title</th>
+            </tr>       
+            <tr >
+                <td><%= @worker.company_name %></td>
+                <td><%= @worker.name%> </td> 
+                <td><%= @worker.email %> </td>
+                <td><%= link_to @worker.order.title, order_path(@worker.order.id)%></td>
+            </tr>
+        </table>
+        <br><br>
+
+        <%= link_to "Go Back ", "/workers", class: " container btn btn-lage btn-danger" %>
 </div>
 

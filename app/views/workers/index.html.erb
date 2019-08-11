@@ -6,7 +6,7 @@
             <th>Name</th>
             <th>Company Name</th> 
             <th>Email</th>
-            <th>Order_Id</th>
+            <th>Work Order Id</th>
             <th>Delete</th>
         </tr>
             <% @workers.each do |worker|%>
@@ -14,14 +14,13 @@
                         <td><%= link_to worker.name, worker_path(worker.id)%></td>
                         <td><%= worker.company_name%> </td> 
                         <td><%= worker.email%> </td>
-                        <td><%= worker.order_id%> </td>
-                        <td><%= link_to "DELTE", worker_path(worker), :method => :delete, data: {confirm: "Are you sure?"}%></td>
+                        <td><%= link_to worker.order_id, order_path(worker.order.id)%> </td>
+                        <td><%= link_to "DELTE", worker_path(worker), :method => :delete, data: {confirm: "Are you sure?"}, class: "text-danger"%></td>
                     </tr>
             <% end if @workers %>
     </table>
 
     <br><br>
-    <%= link_to "Add Worker", "/workers/new", class: "container btn btn-large btn-primary"%>
-    <br><br>
-    <%= link_to "Go Back", "/orders" %>
+    <%= link_to "Add Worker", "/workers/new", class: "btn btn-large btn-primary"%>
+    <%= link_to "Add Order", "/orders/new", class: "btn btn-large btn-danger" %>
 <div>
