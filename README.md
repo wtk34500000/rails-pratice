@@ -1,24 +1,16 @@
-# README
+## Work Orders
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Work orders application is a powerful, easy-to-use cloud-based computerized management solution for wide range of industries. It helps organizations manage their assets, maintenance, inventory, purchasing and keeping track with schedule.
 
-Things you may want to cover:
+## Live Demo
 
-* Ruby version
+## Installation:
 
-* System dependencies
+- Step 1: `bundle install`
+- Step 2:`rails db:create`
+- Step 3: `rails db:migrate`
+- Step 4: `rails s`
 
-* Configuration
+## Instruction
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Add a work order to start!
