@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   root to: "orders#index"
 
+  #orders api route
+  get "/orders/v1/api", to: "orders#api"
+
 end

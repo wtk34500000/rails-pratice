@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
     end
 
     def update
-        puts params
         @order=Order.find(params[:id])
         if @order.update(order_params)
             redirect_to "/orders"
@@ -34,6 +33,8 @@ class OrdersController < ApplicationController
             if @order.save
                 redirect_to "/orders"
             else
+                @order = Order.new
+                @workers=Worker.all
                 render :new
             end
     end
@@ -42,6 +43,11 @@ class OrdersController < ApplicationController
         order=Order.find(params[:id])
         order.destroy
         redirect_to "/orders"
+    end
+
+    def api
+        @orders=Order.all
+        render :json => @orders
     end
 
     private
