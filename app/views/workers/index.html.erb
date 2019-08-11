@@ -6,13 +6,15 @@
             <th>Name</th>
             <th>Company Name</th> 
             <th>Email</th>
+            <th>Order_Id</th>
             <th>Delete</th>
         </tr>
-            <% @workers.sort.each do |worker|%>
+            <% @workers.each do |worker|%>
                     <tr >
-                        <td><%= worker.name %></td>
+                        <td><%= link_to worker.name, worker_path(worker.id)%></td>
                         <td><%= worker.company_name%> </td> 
                         <td><%= worker.email%> </td>
+                        <td><%= worker.order_id%> </td>
                         <td><%= link_to "DELTE", worker_path(worker), :method => :delete, data: {confirm: "Are you sure?"}%></td>
                     </tr>
             <% end if @workers %>

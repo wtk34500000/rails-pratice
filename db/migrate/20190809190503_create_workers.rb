@@ -4,6 +4,7 @@ class CreateWorkers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :company_name
       t.string :email
+      t.integer :order_id
 
       t.timestamps
     end

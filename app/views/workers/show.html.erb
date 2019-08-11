@@ -1,4 +1,15 @@
-<h1><%= @worker.name%></h1>
-<p><%= @worker.company_name%></p>
-<p><%= @worker.email%></p>
-<p><%= @worker.order.description %></p>
+<div class="container">
+        <h1>Name: <%= @worker.name%></h1>
+        <p>Company Name: <%= @worker.company_name%></p>
+        <p>Email: <%= @worker.email%></p>
+        <div>
+            Assigned Worker Order: 
+            <ul>
+                <li>Work Order Title: <%= @worker.order.title%></li>
+                <li>Work Order Description: <%= @worker.order.description%></li>
+                <li>Work Order Deadline:<%= @worker.order.deadline%></li>
+            </ul>
+        </div>
+        
+</div>
+

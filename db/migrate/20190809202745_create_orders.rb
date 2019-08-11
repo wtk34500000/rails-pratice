@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :description
       t.string :deadline
-      t.integer :workerId
 
       t.timestamps
     end

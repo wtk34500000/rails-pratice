@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2019_08_09_202745) do
     t.string "title"
     t.string "description"
     t.string "deadline"
-    t.integer "workerId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_202745) do
     t.string "name"
     t.string "company_name"
     t.string "email"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

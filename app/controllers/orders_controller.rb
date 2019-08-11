@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
     def index
         @orders=Order.all
+        render :json => @orders
     end
 
     def new
@@ -11,6 +12,7 @@ class OrdersController < ApplicationController
 
     def show
         @order=Order.find(params[:id])
+        render :json => @order
     end
 
     def update
@@ -30,12 +32,12 @@ class OrdersController < ApplicationController
     end
 
     def create
-        @order=Order.new(order_params)
-        if @order.save
-            redirect_to "/orders"
-        else 
-            render :new
-        end
+            @order=Order.new(order_params)
+            if @order.save
+                redirect_to "/orders"
+            else
+                render :new
+            end
     end
 
     def destroy
@@ -46,6 +48,6 @@ class OrdersController < ApplicationController
 
     private
     def order_params
-        params.require(:order).permit(:title, :description, :deadline, :workerId)
+        params.require(:order).permit(:title, :description, :deadline)
     end
 end

@@ -5,7 +5,6 @@
             <th>Title</th>
             <th>Description</th> 
             <th>Deadline</th>
-            <th>workerId</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -14,7 +13,6 @@
                         <td><%= link_to order.title, order_path(order.id) %></td>
                         <td><%= order.description%> </td> 
                         <td><%= order.deadline%> </td>
-                        <td><%= link_to order.workerId, worker_path(order.workerId), class: "text-primary" %> </td>
                         <td><%= link_to "EDIT", edit_order_url(order.id), class: "text-warning" %></td>
                         <td><%= link_to "DELTE", order_path(order), :method => :delete, data: {confirm: "Are you sure?"}, class: "text-danger"%></td>
                     </tr>
@@ -23,6 +21,6 @@
 
     <br><br>
     <%= link_to "Add Work Order", "/orders/new", class: "btn btn-lage btn-primary" %>
-        <%= link_to "Add Worker", "/workers/new", class: "btn btn-lage btn-danger" %>
+    <%= link_to "Add Worker", "/workers/new", class: "btn btn-lage btn-danger" %>
 
 </div>
