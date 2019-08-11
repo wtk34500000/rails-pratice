@@ -23,7 +23,7 @@ Work orders application is a powerful, easy-to-use cloud-based computerized mana
 - Create a worker
 - Delete a worker
 - Create a work order
-- Assigning a worker to an order
+- Assigning a worker to an order(A max of 5 workers)
 - Fetch all work orders:
   ⋅⋅⋅ For a specific worker
   ⋅⋅⋅ Sorted by deadline
