@@ -15,4 +15,5 @@ Work orders application is a powerful, easy-to-use cloud-based computerized mana
 
 ## Instruction
 
-- Add a work order to start!
+- Add a work order to begin if work order list is empty!
+- Use "/orders/v1/api" as the end point for api request
