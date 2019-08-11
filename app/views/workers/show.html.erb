@@ -8,8 +8,8 @@
                 <th>Assigned Work Order Title</th>
             </tr>       
             <tr >
-                <td><%= @worker.company_name %></td>
-                <td><%= @worker.name%> </td> 
+                <td><%= @worker.name %></td>
+                <td><%= @worker.company_name%> </td> 
                 <td><%= @worker.email %> </td>
                 <td><%= link_to @worker.order.title, order_path(@worker.order.id)%></td>
             </tr>
